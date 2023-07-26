@@ -1,0 +1,30 @@
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git checkout -b shubham
+
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git branch
+  hello-world
+* main
+  shubham
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git checkout shubham 
+Switched to branch 'shubham'
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git status
+On branch shubham
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git add .
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git commit -m "changes in home file"
+[shubham def41c8] changes in home file
+ 1 file changed, 11 insertions(+)
+ create mode 100644 home.html
+PS C:\Users\shubh\OneDrive\Desktop\telstra> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\shubh\OneDrive\Desktop\telstra> 
