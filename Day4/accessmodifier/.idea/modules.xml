@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/IdeaProjects/JavaSession/JavaSession.iml" filepath="$USER_HOME$/IdeaProjects/JavaSession/JavaSession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accessmodifier.iml" filepath="$PROJECT_DIR$/accessmodifier.iml" />
+    </modules>
+  </component>
+</project>

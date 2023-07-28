@@ -1,0 +1,226 @@
+//classes and object
+
+class Student{
+    int id;
+    String name;
+}
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Hello and welcome!");
+        Student s1=new Student();
+        Student s2=new Student();
+
+        s1.id=101;
+        s1.name="Sonoo";
+        s2.id=102;
+        s2.name="Amit";
+
+        System.out.println(s1.id+" "+s1.name);
+        System.out.println(s2.id+" "+s2.name);
+
+    }
+}
+
+
+
+//with write function and read function
+
+class Student{
+    int rollno;
+    String name;
+    void insertRecord(int r, String n){
+        rollno=r;
+        name=n;
+    }
+    void displayInformation(){System.out.println(rollno+" "+name);}
+}
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Hello and welcome!");
+        Student s1=new Student();
+        Student s2=new Student();
+        s1.insertRecord(111,"Karan");
+        s2.insertRecord(222,"Aryan");
+        s1.displayInformation();
+        s2.displayInformation();
+
+    }
+}
+
+
+
+//constructor and this 
+//withdraw and deposit
+
+
+class Student{
+    int rollno;
+    String name;
+    int balance;
+    //constructor is been created
+    Student(int rollno, String name){
+        this.rollno=rollno;
+        this.name=name;
+        this.balance=balance;
+    }
+    void displayInformation()
+    {
+        System.out.println(rollno+" "+name);
+    }
+
+    void withdraw(double amount)
+    {
+        balance-=amount;
+        System.out.println("Balance after withdraw "+balance);
+    }
+
+    void deposit(double amount)
+    {
+        balance+=amount;
+        System.out.println("Balance after deposit "+balance);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Hello and welcome!");
+        Student s1=new Student(111,"Karan");
+        Student s2=new Student(222,"Aryan");
+
+        s1.displayInformation();
+        s2.displayInformation();
+
+        s1.balance=1000;
+        //withdraw and deposit
+        s1.withdraw(50);
+        s1.deposit(1000);
+
+    }
+}
+
+
+//getter and setter
+
+package com.telstra.day4;
+
+public class EncapsulationDemo {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+        Employee obj=new Employee();
+        //obj.id=1;
+        //obj.name="shubham";
+        obj.setId(1);
+        obj.setName("shubham");
+        System.out.println(obj.getId());
+        System.out.println(obj.getName());
+
+    }
+}
+
+package com.telstra.day4;
+
+public class Employee {
+     private int id;
+     private String name;
+
+     public String getName() {
+          return name;
+     }
+
+     public void setName(String name) {
+          this.name = name;
+     }
+
+     public int getId() {
+          return id;
+     }
+
+     public void setId(int id) {
+          this.id = id;
+     }
+}
+
+//inheritance
+
+package inheritanceDemo1;
+
+class parent{
+    void mothertongue()
+    {
+        System.out.println("this is parent");
+    }
+}
+class child extends parent{
+    void education()
+    {
+        System.out.println("this is child");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args){
+    child obj=new child();
+    obj.mothertongue();
+    obj.education();
+
+    }
+}
+
+
+//override issue solve by super method
+package inheritanceDemo1;
+
+class parent{
+    void mothertongue()
+    {
+        System.out.println("speak marathi");
+    }
+}
+class child extends parent{
+    void education()
+    {
+        System.out.println("education in BE");
+    }
+    void mothertongue()
+    {
+        super.mothertongue();
+        System.out.println("speak english");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args){
+    child obj=new child();
+    obj.mothertongue();
+
+
+    }
+}
+
+
+//importance of super and accessmodifier and all
+package inheritanceDemo1;
+
+class bank{
+    int amount=1;
+}
+class Axis extends bank{
+    int amount=2;//global veriable
+    void test(){
+        int amount=3;  //local variable
+
+        System.out.println(super.amount);  //parent one
+        System.out.println(this.amount);   //global one
+        System.out.println(amount);       //local one
+    }
+}
+public class SuperDemo {
+    public static void main(String[] args){
+        Axis axis=new Axis();
+        axis.test();
+    }
+}
+
+
