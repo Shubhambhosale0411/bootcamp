@@ -1,0 +1,224 @@
+//static share common properties 
+
+
+package com.takinginput;
+import java.util.Scanner;
+
+class Emp{
+	int id;
+	String name;
+	static String dept;
+}
+
+
+public class StaticDemo {
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Emp.dept="Hr";
+		Emp e1=new Emp();
+		e1.id=1;
+		e1.name="shubham";
+		
+		Emp e2=new Emp();
+		e2.id=1;
+		e2.name="suraj";
+		
+		System.out.println(e1.id+" "+e1.name+" "+e1.dept);
+		System.out.println(e2.id+" "+e2.name+" "+e2.dept);
+	}
+	
+}
+
+
+//super with parameter
+package com.takinginput;
+import java.util.Scanner;
+
+class Emp{
+	int id;
+	String name;
+	static String dept;
+}
+
+class parent{
+	int id;
+	public parent(int id)
+	{
+		System.out.println("this is parent with id= "+id);
+	}
+}
+
+class child extends parent{
+	public child()
+	{
+		super(3);
+		System.out.println("this is child one");
+	}
+}
+
+public class StaticDemo {
+		
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		child obj=new child();
+		
+	}
+	
+}
+
+
+//polymorphism
+//method overloading
+
+package com.overloading;
+
+
+class Flipkart{
+	void filter()
+	{
+		System.out.println("default search");
+	}
+	void filter(int price)
+	{
+		
+	}
+	void filter(String brand,int price)
+	{
+		System.out.println(brand+" "+price);
+	}
+}
+
+public class OverloadingDemo {
+
+	public static void main(String[] args) {
+		Flipkart flipkart=new Flipkart();
+		flipkart.filter("gucci",5000);
+	}
+
+}
+
+//method overriding
+
+
+
+
+
+//interfaces loosely coupled
+package com.overloading;
+
+
+interface Bank{
+	int salary=5000;
+	void greet();
+}
+
+class Axis implements Bank{
+	public void greet() {
+		System.out.println("welcome all");
+	}
+}
+
+public class InterfaceDemo {
+
+	public static void main(String[] args) {
+		
+		Axis axis=new Axis();
+		axis.greet();
+	}
+
+}
+
+
+// loosely coupled example bank
+
+//main app
+package com.telstra.app;
+
+import com.telstra.service.BookingService;
+public class MainApp {
+
+	public static void main(String[] args) {
+
+		
+		BookingService bookingservice=new BookingService();
+		bookingservice.bookTicket();
+
+	}
+
+}
+
+//interface
+package com.telstra.dao;
+
+public interface DbConnect {
+
+	public void databaseproperty();
+
+}
+package com.telstra.dao;
+
+public class MySql implements DbConnect {
+
+	@Override
+	public void databaseproperty() {
+		  System.out.println("mysql");
+		
+	}
+	
+}
+
+package com.telstra.dao;
+
+public class Oracle implements DbConnect {
+
+	@Override
+	public void databaseproperty() {
+		System.out.println("connecting to oracle");
+	}
+	
+	
+
+}
+
+//service page
+package com.telstra.service;
+
+import com.telstra.dao.DbConnect;
+import com.telstra.dao.MySql;
+
+public class BookingService {
+	DbConnect dbconnect;
+	
+	public BookingService() {
+		
+		dbconnect=new MySql();
+	}
+	public void bookTicket()
+	{
+		dbconnect.databaseproperty();
+		System.out.println("ticket booked");
+	}
+}
+
+//exception handling
+package com.exceptionhandling;
+
+public class ExceptionDemo {
+
+	public static void main(String[] args) {
+		
+		System.out.println("getting ready");
+		try {
+		System.out.println(2/0);
+		}
+		catch(ArithmeticException e ) {
+			System.out.println("something went wrong");
+		}
+		System.out.println("hay bro its last line of code");
+	}
+
+}
+
+
