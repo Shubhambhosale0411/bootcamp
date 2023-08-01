@@ -1,0 +1,268 @@
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class GenericCollection {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer>nums=new ArrayList<Integer>();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		nums.add(4);
+		
+		System.out.println("nums  ="+nums);
+		
+		Iterator<Integer>its=nums.iterator();
+		
+		while(its.hasNext())
+		{
+			System.out.println(its.next());
+		}
+
+	}
+
+}
+
+
+vectors in java
+
+import java.util.*;  
+public class VectorExample1 {  
+       public static void main(String args[]) {  
+          //Create an empty vector with initial capacity 4  
+          Vector<String> vec = new Vector<String>(4);  
+          //Adding elements to a vector  
+          vec.add("Tiger");  
+          vec.add("Lion");  
+          vec.add("Dog");  
+          vec.add("Elephant");  
+          //Check size and capacity  
+          System.out.println("Size is: "+vec.size());  
+          System.out.println("Default capacity is: "+vec.capacity());  
+          //Display Vector elements  
+          System.out.println("Vector element is: "+vec);  
+          vec.addElement("Rat");  
+          vec.addElement("Cat");  
+          vec.addElement("Deer");  
+          //Again check size and capacity after two insertions  
+          System.out.println("Size after addition: "+vec.size());  
+          System.out.println("Capacity after addition is: "+vec.capacity());  
+          //Display Vector elements again  
+          System.out.println("Elements are: "+vec);  
+          //Checking if Tiger is present or not in this vector         
+            if(vec.contains("Tiger"))  
+            {  
+               System.out.println("Tiger is present at the index " +vec.indexOf("Tiger"));  
+            }  
+            else  
+            {  
+               System.out.println("Tiger is not present in the list.");  
+            }  
+            //Get the first element  
+          System.out.println("The first animal of the vector is = "+vec.firstElement());   
+          //Get the last element  
+          System.out.println("The last animal of the vector is = "+vec.lastElement());   
+       }  
+}  
+
+
+
+tostring()
+
+package com.telstra.day6.collection;
+
+public class Products {
+	
+	public int id;
+	public String name;
+	public String category;
+	public Products(int id,String name,String category) {
+		this.id=id;
+		this.category=category;
+		this.name=name;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public String toString(){//overriding the toString() method  
+		  return id+" "+name+" "+category;  
+		 }  
+	
+}
+
+package com.telstra.day6.collection;
+
+import java.util.ArrayList;
+import com.telstra.day6.collection.*;
+public class SortingDemo {
+
+	public static void main(String[] args) {
+		//Products product=new Products();
+		ArrayList<Products>product=new ArrayList<>();
+		product.add(new Products(1,"laptop","electronics"));
+		product.add(new Products(2,"PC","electronics"));
+		product.add(new Products(3,"Mobiles","electronics"));
+		product.add(new Products(4,"Dress","accesories"));
+		
+		for(Products pro:product)
+		{
+			System.out.println(pro);
+		}
+	}
+
+}
+
+
+//set 
+
+package com.telstra.day6.collection;
+
+import java.util.HashSet;
+
+public class StackDemo {
+
+	public static void main(String[] args) {
+		
+		HashSet<String> fruit=new HashSet<>();
+		fruit.add("banana");
+		fruit.add("apple");
+		fruit.add("banana");
+		fruit.add("peru");
+		fruit.add("mango");
+		System.out.println("elements are "+fruit);
+	}
+
+}
+
+
+//map
+
+https://javaconceptoftheday.com/count-occurrences-of-each-element-in-an-array/
+
+package com.telstra.day6.collection;
+
+import java.util.HashMap;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, String>hm=new HashMap<String, String>();
+		hm.put("sacin", "batsman");
+		hm.put("dhoni", "batsman");
+		hm.put("sacin", "commentator");
+		hm.put("virat", "batsman");
+		
+		//System.out.println(hm.get("virat"));
+		
+		System.out.println(hm.values());
+		System.out.println(hm.keySet());
+		
+		for(String key:hm.keySet())
+		{
+			System.out.println("Key: "+key+"  values: "+hm.get(key));
+		}
+	}
+
+}
+
+
+junit test
+
+package com.telstra;
+
+public class Calculation {
+	
+	
+	public int substraction(int a,int b)
+	{
+		return a-b;
+	}
+	public long addition(int a, int b) {
+		// TODO Auto-generated method stub
+		return a+b;
+	}
+	
+}
+
+
+package com.telstra.test;
+
+import org.junit.Test;
+
+import com.telstra.Calculation;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert.*;
+public class CalculationTest {
+
+	@Test
+	public void testcalculation()
+	{
+		Calculation calculation =new Calculation();
+		assertEquals(4, calculation.addition(2, 2));
+	}
+}
+
+
+//junit
+
+package com.telstra.test;
+
+import org.junit.Test;
+
+import com.telstra.Calculation;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
+public class CalculationTest {
+
+	@Test
+	public void testcalculation()
+	{
+		Calculation calculation =new Calculation();
+		assertEquals(4, calculation.addition(2, 2));
+		System.out.println("test addition");
+	}
+	@Test
+	public void Eligiblitytest() {
+		Calculation calculation =new Calculation();
+		//assertEquals(4, calculation.addition(2, 2));
+		assertTrue(calculation.checkelg(34));
+		System.out.println("true condition checked");
+	}
+	@Before
+	public void test() {
+		System.out.println("before every test case");
+	}
+	@After
+	public void test2() {
+		System.out.println("After is run");
+	}
+	@BeforeClass
+	public static void test3() {
+		System.out.println("--------Before All------");
+	}
+	@AfterClass
+	public static void test4() {
+		System.out.println("--------After All------");
+	}
+}
+
+
+
