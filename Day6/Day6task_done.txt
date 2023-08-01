@@ -1,0 +1,181 @@
+package com.telstra.Day4.exceptions;
+
+class InValidAgeException extends RuntimeException 
+{ 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	String msg; 
+	public InValidAgeException(String msg) 
+	{ 
+		super(); 
+		this.msg = msg; 
+	} 
+	public String getMsg() 
+		{ 
+		return msg; 
+		} 
+}
+
+
+class Customer { 
+	public void checkEligiblity(int age) 
+	{ 
+		if(age>=18) 
+			System.out.println("eligible to vote");
+		else 
+			throw new InValidAgeException("age is less, minimum should be 18"); 
+	} 
+}
+
+public class CustomExceptionDemo 
+{ 
+	public static void main(String[] args) 
+	{ 
+		Customer customer = new Customer(); 
+		try { 
+			customer.checkEligiblity(12); 
+			} 
+		catch (InValidAgeException e) 
+		{ 
+			System.out.println(e.getMsg()); 
+			} 
+		}
+}
+
+
+
+//arraylist
+
+package com.telstra.day6.collection;
+
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		
+		
+		ArrayList obj=new ArrayList();
+		System.out.println("elements to add");
+		obj.add(1);
+		obj.add(2);
+		obj.add("shubham");
+		
+		System.out.println("size of array "+obj.size());
+		
+		System.out.println("element of size"+obj);
+		
+		
+	}
+
+}
+
+package com.telstra.day6.collection;
+
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		
+		
+		ArrayList obj=new ArrayList();
+		System.out.println("elements to add");
+		obj.add(1);
+		obj.add(2);
+		obj.add("shubham");
+		
+		System.out.println("size of array "+obj.size());
+		
+		System.out.println("element of size"+obj);
+		
+		obj.set(2, 3);
+		obj.remove(2);
+		
+		System.out.println("check for existance "+obj.contains(2));
+		
+		obj.clear();
+		
+		System.out.println("after clear "+obj);
+		
+		
+	}
+
+}
+
+
+//lombok
+package com.telstra.app;
+
+import com.telstra.model.Employee;
+
+public class LambokDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Employee emp=new Employee();
+			System.out.println(""+emp.getName());
+			emp.setName("this is shubham");
+			System.out.println("who are you "+emp.getName());
+	}
+
+}
+package com.telstra.model;
+
+import lombok.Data;
+
+@Data
+
+
+public class Employee {
+	private int id;
+	private String name;
+	private String department;
+	
+}
+
+
+
+//objects arraylist
+
+package com.telstra.day6.collection;
+
+import java.util.ArrayList;
+
+public class Product {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> num1=new ArrayList<Integer>();
+		
+		num1.add(1);
+		num1.add(2);
+		num1.add(3);
+		num1.add(4);
+		num1.add(5);
+		num1.add(6);
+		System.out.println("num1: "+num1);
+		
+		ArrayList<Integer> num2=new ArrayList<Integer>();
+		num2.add(7);
+		num2.add(8);
+		num2.add(9);
+		num2.add(10);
+		
+		System.out.println("num2 "+num2);
+		num2.addAll(num1);
+		//System.out.println("num2 updated "+num2);
+		
+		for(Integer num : num2)
+		{
+			System.out.println(num);
+		}
+			
+		
+	}
+
+}
