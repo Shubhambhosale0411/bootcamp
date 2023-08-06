@@ -1,0 +1,39 @@
+Good quality code is an essential property of a software because it could lead to financial losses or waste of time needed for further maintenance, modification or adjustments if code quality is not good enough. Below, I list the characteristics of a good code.
+
+Readable
+Efficiency
+Robustness
+Keep your code portable
+Reusability
+Can be read by humans
+Self explanatory
+Security
+People can read it
+Easy to understand
+Takes less than 5 min to understand it
+Minimize or eliminate use of global variables
+Comment and document the code
+Use descriptive function and method names - use both uppercase and lowercase, avoid abbreviations, and use as many characters as necessary to be adequately descriptive.
+Be consistent in naming conventions, follow the style guide
+Split your code into short, focused units
+Function and method sizes should be minimized. Less than 100 lines of code is good; less than 50 lines is preferable.
+Function descriptions should be clearly spelled out in comments preceding a function’s code.
+Use white spaces generously - vertically and horizontally.
+Each line of code should contain 70 characters max.
+One code statement per line.
+Coding style should be consistent throughout a program (e.g., use of brackets, indentations, naming conventions).
+In adding comments, err on the side of too many rather than too few comments; a common rule of thumb is that there should be at least as many lines of comments (including header blocks) as lines of code.
+Make extensive use of error-handling procedures and status and error logging.
+Minimize use of multiple inheritances, and minimize use of operator overloading
+Make liberal use of exception handlers
+You can read it, can understand it without documentation
+Understandable, new developers should be able to understand it
+Maintainability
+Avoid security pitfalls
+Easily readable as if it was some text
+Easy to read. Straight forward
+Avoid cyclic dependencies
+Follows convention
+Unambiguous
+Put everything under version control. Which release should have a specific version number
+Uses a simple syntax

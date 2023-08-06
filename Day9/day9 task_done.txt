@@ -1,0 +1,8 @@
+Make a Dockerfile and include the instructions for creating your Docker image.
+Run the docker build command to build your docker image.
+Use the docker run command to create containers now that the docker image is ready to use.
+
+
+//java program for docker
+
+https://bushansirgur.in/dockerize-hello-world-java-program/

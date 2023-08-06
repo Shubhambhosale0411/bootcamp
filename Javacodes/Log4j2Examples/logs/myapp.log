@@ -1,0 +1,4 @@
+2023-08-07 00:35:27,089 - com.app.shubham.Test [processData] -(INFO) from info method 
+2023-08-07 00:35:27,099 - com.app.shubham.Test [processData] -(WARN) from warn method 
+2023-08-07 00:35:27,101 - com.app.shubham.Test [processData] -(ERROR) from error method 
+2023-08-07 00:35:27,101 - com.app.shubham.Test [processData] -(FATAL) from fatal method 
