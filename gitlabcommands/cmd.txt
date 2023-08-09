@@ -1,0 +1,39 @@
+git config --global user.name "shubham0411"
+git config --global user.email "shubham.bhosale0411@gmail.com"
+ git init
+ git status
+ git remote add origin https://gitlab.com/shubham1673932/project1.git
+git branch -M main
+git add .
+ git commit -m "gitlab tut"
+git fetch origin main:tmp
+git rebase tmp
+git push --force origin main
+
+
+ci/cd
+https://docs.gitlab.com/ee/ci/quick_start/
+
+
+runner commands
+https://docs.gitlab.com/runner/install/windows.html
+
+https://www.youtube.com/watch?v=KzjnZSOm_Uo 
+
+
+after runner this last step pipeline banana aana chaye ye raha
+
+https://www.youtube.com/watch?v=Jav4vbUrqII&t=231s
+
+
+stages:
+ 	- build 
+	- test 
+build: 
+	stage: build 
+	script: 
+	   - mvn clean package 
+test: 
+	stage: test 
+	script: 
+	 - mvn test
